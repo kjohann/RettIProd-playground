@@ -1,0 +1,6 @@
+.tmp/
+*.ncrunch*
+*.dotsettings
+bin/
+obj/
+*.suo

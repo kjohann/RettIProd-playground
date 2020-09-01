@@ -7,4 +7,4 @@ jobs:
       - checkout # check out the code in the project directory
       - run: dotnet run -p build/Build.csproj # run the `echo` command
       - store_test_results:
-          path: ~/test_results/xunit
+          path: ~/project/test_results/xunit

@@ -69,6 +69,7 @@ class Build : NukeBuild
                 .SetConfiguration(Configuration)
                 .EnableNoBuild()
                 .EnableNoRestore()
+                .SetResultsDirectory(RootDirectory / "test_results" / "xunit")
             );
         });
 

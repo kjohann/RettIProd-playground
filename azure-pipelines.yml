@@ -1,11 +1,4 @@
 # ASP.NET Core
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'XUnit'
-    testResultsFiles: '**/TEST-*.xml'
-    mergeTestResults: true
-    failTaskOnFailedTests: true
-    testRunTitle: 'Run tests'
 # Build and test ASP.NET Core projects targeting .NET Core.
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
@@ -19,3 +12,10 @@ pool:
 steps:
 - script: dotnet run -p build/Build.csproj
   displayName: 'run build'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'XUnit'
+    testResultsFiles: '**/TEST-*.xml'
+    mergeTestResults: true
+    failTaskOnFailedTests: true
+    testRunTitle: 'Run tests'

@@ -15,6 +15,9 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
 [CheckBuildProjectConfigurations]
 [UnsetVisualStudioEnvironmentVariables]
+[AzurePipelines(
+    AzurePipelinesImage.UbuntuLatest,
+    InvokedTargets = new[] { nameof(Default) })]
 class Build : NukeBuild
 {
     /// Support plugins are available for:

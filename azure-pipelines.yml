@@ -1,5 +1,8 @@
 trigger:
-- master
+  branches:
+    include:
+      - master
+      - krj-*
 
 pool:
   vmImage: 'ubuntu-latest'

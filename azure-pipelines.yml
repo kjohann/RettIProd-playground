@@ -4,14 +4,16 @@ trigger:
       - master
       - krj-*
 
-pool:
-  vmImage: 'ubuntu-latest'
+jobs:
+  - job: build
+    pool:
+      vmImage: 'ubuntu-latest'
 
-container:  mcr.microsoft.com/dotnet/core/sdk:3.1
+    container:  mcr.microsoft.com/dotnet/core/sdk:3.1
 
-variables:
-  buildConfiguration: 'Release'
+    variables:
+      buildConfiguration: 'Release'
 
-steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+    steps:
+    - script: dotnet build --configuration $(buildConfiguration)
+      displayName: 'dotnet build $(buildConfiguration)'

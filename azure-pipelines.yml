@@ -17,3 +17,7 @@ jobs:
     steps:
     - script: dotnet build --configuration $(buildConfiguration)
       displayName: 'dotnet build $(buildConfiguration)'
+  - job: echo
+    pool: 'ubuntu-latest'
+    steps:
+    - script: echo Hello world!
